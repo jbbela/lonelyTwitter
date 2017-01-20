@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -39,6 +40,24 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
+
+				Tweet tweet = new ImportantTweet ("test string");
+                Tweet normalTweet = new NormalTweet("test string");
+
+                try {
+                    if (tweet.isImportant())
+                        Tweet.setMessage("better string");
+
+                } catch (Exception e) {
+                    throw new RuntimeException();
+                }
+
+                String string = tweet.getMessage();
+
+                ArrayList<Tweet> tweetList = new ArrayList<Tweet>();    // array in order to save tweets
+                tweetList.add(tweet);
+                tweetList.add(normalTweet);    // bc it is a list of tweets, normalTweets can also be added
+
 				saveInFile(text, new Date(System.currentTimeMillis()));
 				finish();
 
@@ -92,4 +111,3 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-}
