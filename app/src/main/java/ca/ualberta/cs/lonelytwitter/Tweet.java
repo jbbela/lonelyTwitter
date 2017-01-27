@@ -59,4 +59,9 @@ public abstract class Tweet implements Tweetable {    // implied to extend Objec
     }
 
     public abstract Boolean isImportant();    // has to be implemented in subclasses
+
+    @Override
+    public String toString() {
+        return date.toString() + " | " + message;
+    }
 }
