@@ -10,16 +10,27 @@ import java.util.Date;
  * Non-abstract class that represents the mood Excited; inherits from the Mood class.
  */
 public class Excited extends Mood {
+    /**
+    * Instantiates Excited mood; current date set.
+    */
     public Excited() {
-        super("Excited");    // only passes current mood, so default date will be set
+        super("Excited");
     }
 
+    /**
+    * Instantiates Angry mood; specified date set.
+    * @param date
+    */
     public Excited(Date date) {
-        super(date, "Excited");    // takes date as argument to set with current mood
+        super(date, "Excited"); 
     }
 
+    /**
+    * Format method returns string representing Excited mood.
+    * @return string
+    */
     public String returnString() {
-        return "I am Excited!";    // format method which returns a string representing the mood excited
+        return "I am Excited!";
     }
 
 }
