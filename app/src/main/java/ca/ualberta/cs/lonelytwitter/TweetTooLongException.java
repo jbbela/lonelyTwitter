@@ -5,7 +5,7 @@ package ca.ualberta.cs.lonelytwitter;
  */
 
 /**
- * Is called when user inputs over 140 words
+ * Is called when user input exceeds 140 words.
  */
 public class TweetTooLongException extends Exception {
 }
