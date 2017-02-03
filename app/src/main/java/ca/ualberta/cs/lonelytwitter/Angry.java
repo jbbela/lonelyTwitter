@@ -10,15 +10,25 @@ import java.util.Date;
  * Non-abstract class that represents the mood Angry; inherits from the Mood class.
  */
 public class Angry extends Mood{
+    /**
+    * Instantiates Angry mood; current date set.
+    */
     public Angry() {
-        super("Angry");    // only passes current mood so default date will be set
+        super("Angry");    
     }
 
+    /**
+    * Instantiates Angry mood; specified date set.
+    */
     public Angry(Date date) {
-        super(date, "Angry");    // specifies date, so it is also set with current mood
+        super(date, "Angry");
     }
 
+    /**
+    * Format method returns string representing Angry mood
+    * @return string
+    */
     public String returnString() {
-        return "I am Angry!!!";    // format method returns a string representing the mood Angry
+        return "I am Angry!!!";  
     }
 }
