@@ -15,32 +15,60 @@ import java.util.Date;
 public abstract class Mood {
     private Date date;
     private String mood;
-
+    
+    /**
+    * Sets new mood with current date.
+    * @param mood
+    */
     public Mood(String mood) {
-        this.mood = mood;    // sets new mood
-        this.date = new Date();    // date not specified, so set default date
+        this.mood = mood; 
+        this.date = new Date();
     }
-
+    
+    /**
+    * Sets new mood with given date.
+    * @ param date
+    * @ param mood
+    */
     public Mood(Date date, String mood) {
-        this.mood = mood;    // sets new mood
-        this.date = date;    // sets specified date
+        this.mood = mood; 
+        this.date = date;
     }
-
+    
+    /**
+    * Returns the date.
+    * @return date
+    */
     public Date getDate() {
-        return date;    // returns the date
+        return date;  
     }
 
+    /**
+    * Sets date.
+    * @param date
+    */
     public void setDate(Date date) {
-        this.date = date;    // sets specified date
+        this.date = date; 
     }
 
+    /**
+    * Returns the mood.
+    * @return mood
+    */
     public String getMood() {
-        return mood;    // returns the mood
+        return mood;
     }
 
+    /**
+    * Sets the mood.
+    * @param mood
+    */
     public void setMood(String mood) {
-        this.mood = mood;    // sets the mood
+        this.mood = mood;
     }
 
-    public abstract String returnString();    // returns string
+    /**
+    * For subclasses; format returns string
+    */
+    public abstract String returnString();
 }
