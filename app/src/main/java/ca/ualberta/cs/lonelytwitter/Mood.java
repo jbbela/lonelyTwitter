@@ -7,7 +7,9 @@ import java.util.Date;
  */
 
 /**
- * Abstract base class Mood that represents the user's current mood.
+ * Abstract base class Mood that represents the user's current mood; each mood is made up of a
+ * mood and date
+ * Contains setters and getters for moods and dates, as well as returns a string
  */
 
 public abstract class Mood {

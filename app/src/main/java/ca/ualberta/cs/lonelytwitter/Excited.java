@@ -7,9 +7,8 @@ import java.util.Date;
  */
 
 /**
- * Non-abstract class that represents the mood Excited. Inherits from the Mood class.
+ * Non-abstract class that represents the mood Excited; inherits from the Mood class.
  */
-
 public class Excited extends Mood {
     public Excited() {
         super("Excited");    // only passes current mood, so default date will be set

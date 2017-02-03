@@ -6,6 +6,11 @@ import java.util.Date;
  * Created by belardo on 1/19/17.
  */
 
+/**
+ * Class of NormalTweet object that is used to hold a tweet's message and date; is not considered
+ * important.
+ * Inherits from Tweet class
+ */
 public class NormalTweet extends Tweet {
     public NormalTweet(String message) {
         super(message);

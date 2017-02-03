@@ -7,9 +7,8 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Non-abstract class that represents the mood Angry. Inherits from the Mood class.
+ * Non-abstract class that represents the mood Angry; inherits from the Mood class.
  */
-
 public class Angry extends Mood{
     public Angry() {
         super("Angry");    // only passes current mood so default date will be set

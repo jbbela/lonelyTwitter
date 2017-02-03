@@ -5,7 +5,8 @@ package ca.ualberta.cs.lonelytwitter;
  */
 
 /**
- * Everything in an interface must be public. Modifier public is redundant.
+ * Public interface Tweetable extended by Tweet; used to get message and set message
+ * Everything in an interface must be public
  */
 public interface Tweetable {
     public String getMessage();

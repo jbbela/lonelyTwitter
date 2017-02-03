@@ -9,7 +9,8 @@ import java.util.Date;
 
 
 /**
- * Every Tweet has to pass a message;
+ * Every Tweet has to pass a message; Abstract class that defines the Tweet object
+ * Contains constructors, setters, and getters for tweets
  */
 
 public abstract class Tweet implements Tweetable {    // implied to extend Object
