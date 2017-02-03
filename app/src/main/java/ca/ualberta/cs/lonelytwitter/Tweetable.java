@@ -5,7 +5,7 @@ package ca.ualberta.cs.lonelytwitter;
  */
 
 /**
- * Public interface Tweetable extended by Tweet; used to get message and set message
+ * Public interface Tweetable extended by Tweet; used to get message and set message.
  * Everything in an interface must be public
  */
 public interface Tweetable {
