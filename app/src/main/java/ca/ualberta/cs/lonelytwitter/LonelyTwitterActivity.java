@@ -77,13 +77,15 @@ public class LonelyTwitterActivity extends Activity {
                         "}");
 
                 try {
+                    tweetList.clear();
                     tweetList.addAll(getTweetsTask.get());
+                    adapter.notifyDataSetChanged();
 
                 } catch(Exception e) {
                     Log.i("Error", "Failed to get the tweet out of the async object");
                 }
 
-				adapter.notifyDataSetChanged();
+
 			}
 		});
 
