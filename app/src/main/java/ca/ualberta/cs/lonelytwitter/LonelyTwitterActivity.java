@@ -11,11 +11,14 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +58,9 @@ public class LonelyTwitterActivity extends Activity {
      * @see #loadFromFile()
      * @see #saveInFile()
      */
+
+    private LonelyTwitterActivity activity = this;
+
     private static final String FILENAME = "file.sav";
     private enum TweetListOrdering {DATE_ASCENDING, DATE_DESCENING, TEXT_ASCENDING,
                 TEXT_DESCENDING}
@@ -63,6 +69,10 @@ public class LonelyTwitterActivity extends Activity {
 
     private ArrayList<Tweet> tweetList;
     private ArrayAdapter<Tweet> adapter;
+
+    public ListView getOldTweetsList() {
+        return oldTweetsList;
+    }
 
     /**
      * Called when the activity is first created.
@@ -74,7 +84,7 @@ public class LonelyTwitterActivity extends Activity {
         setContentView(R.layout.main);
 
         bodyText = (EditText) findViewById(R.id.body);
-        Button saveButton = (Button) findViewById(R.id.save);
+        final Button saveButton = (Button) findViewById(R.id.save);
         Button clearButton = (Button) findViewById(R.id.clear);
 
         oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
@@ -102,11 +112,26 @@ public class LonelyTwitterActivity extends Activity {
                 setResult(RESULT_OK);
 
                 tweetList.clear();
-
+                deleteFile("file.sav");
                 adapter.notifyDataSetChanged();
 
                 saveInFile();
 
+            }
+        });
+
+        oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(activity, EditTweetActivity.class);
+
+                NormalTweet tweet = (NormalTweet) oldTweetsList.getItemAtPosition(i);
+                String testString = tweet.getMessage();
+                Date testDate = tweet.getDate();
+
+                intent.putExtra("testString", testString);
+                intent.putExtra("testDate", testDate);
+
+                startActivity(intent);
             }
         });
 
