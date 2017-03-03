@@ -9,6 +9,9 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import static ca.ualberta.cs.lonelytwitter.R.id.textView2;
 
 public class EditTweetActivity extends Activity {
 
@@ -20,5 +23,8 @@ public class EditTweetActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         String testString = bundle.getString("testString");
 
+        TextView testTweet = (TextView) findViewById(textView2);
+
+        testTweet.setText(testString);
     }
 }

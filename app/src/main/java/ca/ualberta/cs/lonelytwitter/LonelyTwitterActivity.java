@@ -126,10 +126,8 @@ public class LonelyTwitterActivity extends Activity {
 
                 NormalTweet tweet = (NormalTweet) oldTweetsList.getItemAtPosition(i);
                 String testString = tweet.getMessage();
-                Date testDate = tweet.getDate();
 
                 intent.putExtra("testString", testString);
-                intent.putExtra("testDate", testDate);
 
                 startActivity(intent);
             }
